@@ -6,8 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main.component';
 
-import { BrokenModule } from './broken/broken.module';
-
 const AppRoutes: Routes = [
   { path: "", component: MainComponent },
   { path: "broken", loadChildren: "./broken/broken.module#BrokenModule" },
@@ -18,7 +16,9 @@ const AppRoutes: Routes = [
   imports:      [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes, {
+      enableTracing: true
+    })
   ],
   declarations: [ AppComponent, MainComponent ],
   bootstrap:    [ AppComponent ]

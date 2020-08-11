@@ -6,6 +6,11 @@ import { EntrypointComponent } from './entrypoint.component';
 const routes: Routes = [
   {
     path: "",
+    pathMatch: "full",
+    redirectTo: "display"
+  },
+  {
+    path: "display",
     component: EntrypointComponent,
     children: [
       {

@@ -8,6 +8,12 @@ import { NamedOutletComponent } from './named-outlet.component';
 const routes: Routes = [
   {
     path: "",
+    pathMatch: "full",
+    redirectTo: "display"
+  },
+  {
+    // with empty path, the children outlets are not recognized
+    path: "display",
     component: EntrypointComponent,
     children: [
       {
